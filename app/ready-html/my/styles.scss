@@ -1,0 +1,329 @@
+/* this file will be extracted to main dist folder and is imported in index.html */
+/* This file is for setting global styles  */
+@import 'variables';
+@import '../assets/cssLibs/mmemu-css/jquery.mmenu.all';
+.mm-menu.mm-offcanvas.mm-current.mm-opened{
+  z-index: 4;
+}
+html, body, app{
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  background: #Ffff;
+  line-height: 1.75;
+}
+$colors: $blue, $red, $accent;
+@for $i from 1 through length($colors){
+  .carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i}){
+    background-color: nth($colors, $i);
+  }
+}
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity = $opacity);
+}
+.preload{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 888;
+  background-color: $dark;
+  .pulse{
+   position: relative;
+    left: 50%;
+    top: 50vh;
+    margin: -40px 0 0 -40px;
+    &:before, &:after{
+      content: '';
+      border: 5px solid #323232;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: absolute;
+    }
+    &:before{
+      animation: pulse-outer .8s ease-in infinite;
+    }
+    &:after{
+      animation: pulse-inner .8s linear infinite;
+    }
+  }
+}
+
+@keyframes pulse-outer {
+   0%{
+     @include opacity(100);
+   }
+   50%{
+     @include opacity(50);
+   }
+   100%{
+     @include opacity(0);
+   }
+ }
+@keyframes pulse-inner {
+  0%{
+    @include opacity(0);
+    transform: scale(0);
+  }
+  100%{
+    @include opacity(100);
+    transform: scale(1);
+  }
+}
+.owl-item{
+  &:nth-child(2n + 2){
+    .carousel-services-item{
+      flex-direction: column;
+    }
+  }
+}
+.owl-carousel{
+  .owl-item{
+    backface-visibility: inherit;
+  }
+}
+.two-words{
+  font-size: 20px;
+  font-weight: normal;
+  display: block;
+}
+.owl-nav{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  & > div{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: #ffffff;
+    text-align: center;
+    line-height: 64px;
+  }
+  & .owl-prev{
+    display: inline-block;
+    right: 0;
+  }
+  & .owl-next{
+    display: inline-block;
+    left: 0;
+  }
+}
+.one-word{
+  color: white;
+}
+.fotorama {
+
+  background: rgba($over, .5);
+
+  &__nav {
+    &-wrap {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      padding: 0 30px;
+    }
+  }
+  &__thumb {
+    border: 4px solid #fff;
+    transition: .5s ease;
+
+    &-border{
+      border-color: #3d3c3c;
+    }
+  }
+  &__active{
+    .fotorama__thunb{
+      border-color: #3d3c3c;
+    }
+  }
+}
+.fotorama__arr{
+  &--prev, &--next{
+    &::before{
+      font-size: 40px;
+      color: white;
+      font: normal normal normal 14px/1 FontAwesome;
+    }
+    background: none
+  }
+  &--prev{
+    text-align: right;
+    &::before{
+
+      content: '\f104';
+
+    }
+  }
+  &--next{
+    &::before{
+      content: '\f105'
+    }
+  }
+}
+.callback-select{
+  margin-top: 10px;
+}
+.disable{
+  display: none;
+}
+
+.selectize-control .selectize-input{
+  background: transparent;
+  border: rgba(#000, .1) 1px solid;
+  border-bottom:rgba(#000, .1) 2px solid;
+  display: inline-block;
+  padding: 10px 22px;
+  outline: none;
+  margin-top: 10px;
+  border-radius: 2px;
+  color: #fff;
+
+  input::-webkit-input-placeholder{
+    color: #fff!important;
+    font-size: 16px;
+  }
+}
+.selectize-control.callback-select.single .selectize-input.input-active{
+  background: $accent;
+}
+.selectize-control.callback-select{
+  overflow: inherit;
+  line-height: inherit;
+  text-align: left;
+}
+.selectize-input.input-active.dropdown-active::before{
+  background: transparent;
+}
+.selectize-control.single{
+  .selectize-input.items.not-full.has-options::after{
+    border: none;
+    content:'\f107';
+    font: normal normal normal 14px/1 FontAwesome;
+    position: absolute;
+    right: 25px;
+    top: 16px;
+  }
+  .selectize-input.items.not-full.has-options.input-active.dropdown-active:after{
+    content:'\f106';
+    border: none;
+    position: absolute;
+    right: 25px;
+    top: 16px;
+    font: normal normal normal 14px/1 FontAwesome;
+  }
+
+  .selectize-dropdown{
+    margin-top: -8px;
+    font-size: 15px;
+    border: none;
+    border-radius: 0;
+
+    &-content{
+      .option{
+        padding: 10px 22px;
+
+        &.active{
+          background: rgba($accent, .2);
+        }
+      }
+    }
+  }
+}
+.s-review{
+  .owl-carousel{
+    .owl-dots{
+      width: 100%;
+      text-align: center;
+      .owl-dot{
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background: #fff;
+        margin-left: 10px;
+        display: inline-block;
+        transition: .5s ease;
+        &.active{
+          background: $accent;
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
+}
+
+.s-partners{
+  &.section-overlay::after{
+    background-color: #fff;
+  }
+  .h2{
+    margin-top: 0;
+    color: $accent;
+  }
+  .partner{
+    display: flex;
+    height: 100%;
+    margin: auto;
+  }
+  .owl-stage{
+    display: flex;
+  }
+  .owl-item{
+    margin-top: 30px;
+
+    img{
+      max-width: 100%;
+      width: auto;
+      display: inline-block;
+      margin: auto;
+    }
+  }
+  .owl{
+    &-nav{
+
+    }
+    &-prev, &-next{
+      color: #999;
+      font-size: 30px;
+      top: 35px;
+      background: none;
+      transition: .4s ease;
+      &:hover{
+        opacity: .7;
+      }
+    }
+    &-prev{
+      right: -60px;
+    }
+    &-next{
+      left: -60px;
+    }
+  }
+}
+@media only screen and (max-width: 768px){
+
+  .s-partners{
+    .owl{
+      &-prev{
+        right: 30px;
+      }
+      &-next{
+        left: 30px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px){
+  .s-partners{
+    .owl{
+      &-prev{
+        right: -15px;
+      }
+      &-next{
+        left: -15px;
+      }
+    }
+  }
+}
