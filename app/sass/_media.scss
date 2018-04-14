@@ -16,10 +16,85 @@
 }
 
 /* Extra Small Devices, Phones */
+@media only screen and (max-width:  576px){
+
+  .container {
+    width: auto;
+  }
+
+  .header {
+    height: 336px;
+    padding-top: 0;
+  }
+
+  .wrapper-img {
+    left: 0;
+  }
+
+  .logo {
+
+    &-bottom {
+      position: absolute;
+      top: 127px;
+      left: 0;
+
+      .img {
+        width: 100%;
+      }
+    }
+
+    img {
+      width: 73%;
+      display: block;
+      margin: 34px auto;
+    }
+  }
+
+  .has-error {
+
+    p {
+      font-family: MyriadPro-Regular;
+      font-size: 14px;
+    }
+  }
+
+
+  .footer {
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .t-c {
+        margin-left: 0;
+        margin-top: -25px;
+
+        &_link {
+
+          img {
+            width: 80%;
+          }
+        }
+      }
+
+      .open {
+        margin-right: 23px;
+
+        &-entry {
+          line-height: 23px;
+          font-size: 13px;
+          letter-spacing: -1px;
+        }
+      }
+
+    }
+  }
+
+}
+/* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px){
 
   .container {
-    width: 100%;
+    width: auto;
   }
 
 }
@@ -27,9 +102,6 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px){
-  .container {
-    width: 100%;
-  }
 
 }
 
