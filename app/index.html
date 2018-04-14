@@ -14,23 +14,29 @@
       <header class="header">
         <div class="wrapper-img">
           <a href="#" class="logo">
-            <img src="img/logo.png" alt="logo">
+            <img src="img/logo.png" class="img" alt="logo">
           </a>
           <a href="#" class="logo-bottom">
-            <img src="img/1_123.png" alt="logo">
+            <img src="img/1_123.png" class="img" alt="logo">
           </a>
         </div>
       </header>
       <div class="prizes">
         <p class="prize-text">
-          <img src="img/words.png" alt="prizes" class="prize-img">
+          <img src="img/words.png" alt="prizes" class="prize-img img">
         </p>
       </div>
       <div class="form-wrapper">
-        <form class="form-send">
+        <form class="form-send" name="send-form">
           <div class="file-phone error">
             <div class="prefix view">
-              <input type="text" name="prefix" class="form-input">
+              <!--<input type="text" name="prefix" class="form-input">-->
+              <select name="prefix" id="prefix" class="form-select">
+                <option value="08">08</option>
+                <option value="08">07</option>
+                <option value="08">06</option>
+                <option value="08">05</option>
+              </select>
             </div>
             <div class="phone view">
               <input type="tel" name="tel" placeholder="Your Mobile Number" class="form-input input-phone">
@@ -40,8 +46,36 @@
               <p>please enter with a different mobile number.</p>
             </div>
           </div>
+          <div class="file-code error">
+            <div class="code view">
+              <input type="text" name="code" placeholder="Type The Code From Your Tayto MultiPack" class="form-input input-code">
+            </div>
+            <div class="has-error">
+              <p>Sorry, we can't seem to recognise than Code</p>
+              <p>Please check your pack and re-enter the Code.</p>
+            </div>
+          </div>
+          <div class="file-submit">
+            <button type="submit" class="form-submit">
+              <img src="img/submit.png" class="img" alt="submit">
+            </button>
+          </div>
         </form>
       </div>
+      <footer class="footer">
+        <div class="footer-wrapper">
+          <div class="t-c">
+            <a href="#" class="t-c_link">
+              <img src="img/t&c.png" alt="T&C" class="img">
+            </a>
+          </div>
+          <div class="open">
+            <p class="open-entry">
+              Entry open from 00:01 on 01.05.18 to 23:59 on 30.06.18
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   </div>
 </body>

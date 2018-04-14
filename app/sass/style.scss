@@ -7,7 +7,6 @@ html, body {
   position: relative;
   line-height: 1.7;
   font-family: 'Montserrat';
-  height: 100%;
 }
 .h1, .h2, .h3, .h4, .h5, .h6{
   line-height: 1.4;
@@ -16,7 +15,7 @@ a, a:hover, a:focus{
   text-decoration: none;
 }
 
-input {
+input, select, button {
   outline:none;
 }
 
@@ -31,7 +30,8 @@ p {
 }
 
 .container {
-  width: 465px;
+  width: 495px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -43,15 +43,24 @@ p {
 
 .wrapper-img {
   position: absolute;
-  left: 75px;
+  left: 90px;
+}
+
+.img {
+  max-width: 100%;
 }
 
 .logo {
 
   &-bottom {
     position: absolute;
-    top: 124px;
+    top: 127px;
     left: -82px;
+
+    .img {
+      width: auto;
+      max-width: inherit !important;
+    }
   }
 }
 
@@ -60,6 +69,7 @@ p {
 
   &-text {
     margin: 0;
+    margin-left: 15px;
     padding-top: 6px;
   }
 }
@@ -71,10 +81,13 @@ p {
   }
 
   &-send {
+    padding: 0 15px;
+    max-width: 465px;
 
     .file-phone {
       display: flex;
       position: relative;
+      margin-bottom: 33px;
     }
 
     .prefix {
@@ -82,20 +95,53 @@ p {
       width: 63px;
       margin-left: 15px;
       margin-right: 57px;
-      margin-bottom: 64px;
+      padding-top: 12px;
     }
 
     .phone {
       height: 76px;
       width: 316px;
     }
+
+    .code {
+      width: calc(100% - 33px);
+      margin-left: 14px;
+      padding-bottom: 12px;
+    }
+  }
+
+  &-submit {
+    padding: 0;
+    margin: 0;
+    margin-left: 9px;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.form-select {
+  font-family: Futura;
+  font-size: 28px;
+  color: #000;
+  width: 100%;
+  max-height: 50px;
+  overflow-y: auto;
+  border: none;
+  background: transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+
+  option {
+    background: $yellow;
   }
 }
 
 .has-error {
   position: absolute;
   width: 100%;
-  bottom: 35px;
+  bottom: -15px;
   text-align: center;
   color: #fff;
   display: none;
@@ -107,8 +153,18 @@ p {
   }
 }
 
-.file-phone.error .has-error {
+.file-phone.error .has-error, .file-code.error .has-error {
   display: block;
+}
+
+.file-code {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.file-submit {
+  display: flex;
+  justify-content: center;
 }
 
 .form-input {
@@ -119,13 +175,19 @@ p {
   color: #000;
 }
 
-.input-phone {
+.input-phone, .input-code {
   width: calc(100% - 70px);
-  padding: 15px 35px 0 35px;
+  padding: 12px 5px 0 35px;
   height: 35px;
 }
 
+.input-code {
+  padding: 8px 0 0 22px;
+  width: calc(100% - 20px);
+}
+
 .view {
+  height: 76px;
   position: relative;
   background: url('../img/3.png')repeat-x;
   background-position: 0 -5px;
@@ -151,6 +213,8 @@ p {
   }
 }
 
+
+
 .form-input::-webkit-input-placeholder {
   font-family: Futura;
   font-size: 28px;
@@ -165,6 +229,39 @@ p {
 }
 .form-input::-ms-input-placehold {
   color: #000;
+}
+
+.input-code::-webkit-input-placeholder {
+  font-family: MyriadPro-Regular;
+  letter-spacing: -2px;
+  font-size: 26px;
+  word-spacing: 2px;
+  text-align: justify;
+}
+
+.footer {
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+  .t-c {
+    margin-left: 15px;
+    margin-top: -25px;
+  }
+
+  .open {
+    margin-right: 23px;
+
+    &-entry {
+      font-family: MyriadPro-Regular;
+      color: #fff;
+      letter-spacing: -.8px;
+      line-height: 23px;
+      font-size: 16px;
+    }
+  }
+
+  }
 }
 
 @import "media";
